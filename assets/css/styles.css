@@ -1,0 +1,1718 @@
+/* Estilos Generales */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    background-color: aliceblue;
+    padding-top: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+h4 {
+    font-size: 2.8rem;
+    font-weight: 200;
+}
+
+#proyectos,
+#index,
+#agencia,
+#servicios,
+#planes {
+    display: grid;
+    grid-template-areas: "header"
+                          "main"
+                          "footer";
+}
+
+/* Header */
+@media  screen and (min-width: 768px) {
+    .header {
+        display: grid;
+        grid-template-areas:    "contacto contacto" 
+                                "logo nav";
+    }
+}
+
+
+.header__contacto {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .header__contacto {
+        grid-area: contacto;
+        margin-top: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+    }
+}
+
+.header__tel-mail {
+    font-size: 1.6rem;
+}
+
+@media  screen and (min-width: 768px) {
+    .header__tel-mail {
+        margin-left: 2rem;
+    }
+}
+
+.header__redes .fab::before,
+.footer__redes .fab::before {
+    font-size: 4rem;
+}
+
+.header__redes .fab,
+.footer__redes .fab {
+    margin-right: 2rem;
+    margin-bottom: 3rem;
+}
+
+.fa-linkedin {
+    color: #0a66c2;
+}
+
+.fa-twitter-square {
+    color: #179cf0;
+}
+
+.fa-instagram-square {
+    background: #f9ed32;
+    background: -moz-linear-gradient(45deg,  #f9ed32 0%, #ee2a7b 68%, #ee2a7b 68%, #002aff 100%);
+    background: -webkit-linear-gradient(45deg,  #f9ed32 0%,#ee2a7b 68%,#ee2a7b 68%,#002aff 100%);
+    background: linear-gradient(45deg,  #f9ed32 0%,#ee2a7b 68%,#ee2a7b 68%,#002aff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ed32', endColorstr='#002aff',GradientType=1 );
+}
+
+@media screen and (min-width: 768px) {
+    .header__logo {
+        grid-area: logo;
+        margin-left: 2rem;
+    }
+}
+
+.header__logo a,
+.footer__logo a {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-top: 3.6rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .header__logo a {
+        margin-top: 2rem;
+    }
+}
+
+.header__menu-bar {
+    display:block;
+    width:100%;
+    position: fixed;
+    top:0;
+    background: transparent;
+    z-index: 9999;
+}
+
+@media screen and (min-width: 768px) {
+    .header__menu-bar {
+        display: none;
+    }
+}
+
+.header__menu_bar .btn--menu {
+    display: block;
+    padding: 20px;
+    color: black;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.fa-bars {
+    color: black;
+}
+
+.header__menu-bar i {
+    float: right;
+    margin: 1rem 1rem 0 0;
+    font-size: 40px;
+}
+
+.header__menu-principal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    right:100%;
+    margin: -22rem 0 0 0;
+    background-color: rgb(188, 209, 228);
+    color:rgb(12, 58, 104);
+    z-index: 500;
+}
+
+.header__menu-principal li {
+    display: block;
+}
+
+.header__menu-principal ul .submenu {
+    border-bottom: 2px solid rgba(255,255,255,.5);
+}
+
+.header__menu-principal li a {
+    display: inline-block;
+    color:rgb(12, 58, 104);
+    padding: 2rem 0;
+    margin-right: 2rem;
+}
+
+.header__menu-principal .carret:hover .children {
+    display: block;
+}
+
+.header__menu-principal .children {
+	display: none;
+	/* background:#011826; */
+	position: relative;
+	width: 100%;
+	z-index:1000;
+}
+
+.header__menu-principal ul li .children li {
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    background-color: rgb(188, 209, 228);
+}
+
+.header__menu-principal ul li .children li a:hover {
+    color:rgb(12, 58, 104);
+    font-weight: 700;
+}
+
+.header__menu-principal .carret {
+    margin-left: 3rem;
+}
+
+.carret:hover {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .header__menu-principal {
+        grid-area: nav;
+        position: static;
+        margin: 0;
+        background-color: transparent;
+        z-index: 9999;
+        overflow: hidden;
+    }
+    
+    .header__menu-principal ul:first-child {
+        position: relative;
+        display: flex;
+    }
+    
+    .header__menu-principal ul li {
+        display:inline-block;
+        position: relative;
+    }
+    
+    .header__menu-principal ul .submenu {
+        width: auto;
+        height: 31rem;
+        z-index: 9999;
+        border-bottom: none;
+    }
+    
+    .header__menu-principal ul li a {
+        color:#000000;
+        display:block;
+        padding: 1rem;
+    }
+    
+    .header__menu-principal ul li .children {
+        display: none;
+        background: transparent;
+        position: absolute;
+        width: 150%;
+        z-index:1000;
+        padding: 0;
+    }
+    
+    .header__menu-principal ul .submenu:hover > .children {
+        display:block;
+    }
+    
+    
+    .header__menu-principal ul li .children li {
+        display:block;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .header__menu-principal ul li .children li a {
+        display: block;
+    }
+        
+    .header__menu-principal ul li .carret {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .header__menu-principal ul:first-child {
+        margin-left: 40rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .header__menu-principal ul:first-child {
+        margin-left: 80rem;
+    }
+}
+
+
+
+/* Main */
+.main {
+    width: 100%;
+}
+
+@media screen and (min-width:768px) {
+    .main {
+        margin-top: -24rem;
+    }
+}
+
+.slogan {
+    padding: 0 2rem;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.contactanos {
+    min-height: 50rem;
+    background-image: url(https://cyberdietoterapia.com/images/background01.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.contactanos p {
+    padding: 2rem;
+    font-weight: 700;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .contactanos p {
+        text-align: center;
+    }
+}
+
+.btn {
+    display: block;
+    padding: 3rem;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: rgb(188, 209, 228);
+    color: rgb(12, 58, 104);
+    font-weight: 900;
+}
+
+.btn--white {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+@media screen and (min-width: 425px) {
+    .btn--white {
+        color: rgb(12, 58, 104);
+        border-color: rgb(12, 58, 104);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .btn--white {
+        color: rgb(0, 0, 0);
+        border-color: rgb(0, 0, 0);
+    }
+}
+
+.btn--black {
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.razones {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+    .razones {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .razones .image {
+        order: 0;
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    article {
+        margin: 6rem 0;
+    }
+
+    .fases .row,
+    .fases .row-reverse {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    article {
+        margin: 10rem 0;
+    }
+}
+
+.image {
+    order: 1;
+    margin-top: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+    .image img {
+        max-height: 795px;
+    }
+}
+
+.image img,
+.gallery-item img {
+    width: 100%;
+}
+
+.content,
+.faqs {
+    padding: 2rem;
+}
+
+.faqs {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .fases {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .fases .grid-row {
+        display: grid;
+        grid-template-rows: 2fr;
+    }
+
+    .fases .column1 {
+        display:grid;
+        grid-template-rows: 1fr 4fr 4fr;
+        padding-bottom: 0;
+    }
+
+    .fases .column2 {
+        display:grid;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .fases article {
+        width: 50%;
+        position: relative;
+    }
+
+    .fases .row {
+        text-align: right;
+        padding-right: 4rem;
+        border-right: 1px solid rgb(12, 58, 104);
+    }
+
+    .fases .row:after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        right: -10px;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #179cf0;
+        z-index: 50;
+    }
+
+    .fases .row-reverse {
+        justify-self: end;
+        padding-left: 4rem;
+        border-left: 1px solid rgb(12, 58, 104);
+    }
+
+    .fases .row-reverse:before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -10px;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #179cf0;
+        z-index: 50;
+    }
+
+    .fases .image {
+        background-image: url(https://cyberdietoterapia.com/images/img02.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .fases .image img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .fases .btn {
+        order: 2;
+        justify-self: end;
+        margin: 3rem;
+
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .fases .btn {
+        margin: 3rem 20rem 3rem 3rem;
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .fases .column1 h2 {
+        margin-top: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+
+/* Acordeon */
+.acordeon {
+    text-align: left;
+}
+
+p, .acordeon__item i:before, .acordeon__item i:after {
+    transition: all 0.3s;
+}
+
+.faqs h2 {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    color: #000;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.faqs .acordeon__item-title,
+.cronology .acordeon__item-title {
+    font-size: 2rem;
+    line-height: 3.4rem;
+    text-align: left;
+    padding: 15px 30px 0 15px;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.faqs .acordeon__item-content,
+.cronology .acordeon__item-content {
+    color: #333;
+    text-align: left;
+    font-size: 1.8rem;
+    line-height: 1.45;
+    position: relative;
+    overflow: hidden;
+    max-height: 250px;
+    will-change: max-height;
+    contain: layout;
+    display: inline-block;
+    opacity: 1;
+    transform: translate(0, 0);
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 5rem 0 1.5rem;
+    transition: .3s opacity, .6s max-height;
+    hyphens: auto;
+    z-index: 2;
+}
+
+.faqs .acordeon,
+.cronology .acordeon {
+    list-style: none;
+    perspective: 900;
+    padding: 0;
+    margin: 0;
+}
+
+.faqs .acordeon__item,
+.cronology .acordeon__item {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    /*padding-bottom: 4px;*/
+    /*padding-top: 18px;*/
+    /* background: #fff; */
+    box-shadow: 0 3px 10px -2px rgba(0,0,0,0.1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.faqs .acordeon__item + li,
+.cronology .acordeon__item + li {
+    margin-top: 15px;
+}
+
+.faqs .acordeon__item:last-of-type,
+.cronology .acordeon__item:last-of-type {
+    padding-bottom: 0;
+}
+
+.faqs .acordeon__item i,
+.cronology .acordeon__item i {
+    position: absolute;
+    transform: translate(-2px, 0);
+    margin-top: 28px;
+    right: 15px;
+}
+
+.faqs .acordeon__item i:before, 
+.faqs .acordeon__item i:after,
+.cronology .acordeon__item i:before,
+.cronology .acordeon__item i:after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 3px;
+    height: 9px;
+}
+
+.faqs .acordeon__item i:before,
+.cronology .acordeon__item i:before {
+    transform: translate(-2px, 0) rotate(45deg);
+}
+
+.faqs .acordeon__item i:after,
+.cronology .acordeon__item i:after {
+    transform: translate(2px, 0) rotate(-45deg);
+}
+
+.faqs .acordeon__item input[type=checkbox],
+.cronology .acordeon__item input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    touch-action: manipulation;
+}
+
+.faqs .acordeon__item input[type=checkbox]:checked ~ .acordeon__item-title,
+.cronology .acordeon__item input[type=checkbox]:checked ~ .acordeon__item-title {
+    color: #000;
+}
+
+.faqs .acordeon__item input[type=checkbox]:checked ~ .acordeon__item-content,
+.cronology .acordeon__item input[type=checkbox]:checked ~ .acordeon__item-content {
+    /*margin-top: 0;*/
+    max-height: 0;
+    transition: .3s;
+    opacity: 0;
+    /*transform: translate(0, 50%);*/
+}
+
+.faqs .acordeon__item input[type=checkbox]:checked ~ i:before,
+.cronology .acordeon__item input[type=checkbox]:checked ~ i:before {
+    transform: translate(2px, 0) rotate(45deg);
+}
+
+.faqs .acordeon__item input[type=checkbox]:checked ~ i:after,
+.cronology .acordeon__item input[type=checkbox]:checked ~ i:after {
+    transform: translate(-2px, 0) rotate(-45deg);
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-sup .footer__menu {
+    display: none;
+}
+
+.footer__redes .fa-instagram-square {
+    color: black;
+}
+
+.footer-sup {
+    order: 2;
+}
+
+.footer-inf {
+    order: 3;
+}
+
+.footer__logo {
+    order: 1;
+}
+
+.footer__logo a {
+    color: aliceblue;
+}
+
+.footer__redes-siguenos {
+    font-size: 2.4rem;
+}
+
+.copy {
+    font-size: 1.6rem;
+}
+
+/* Footer Media Queries */
+@media screen and (min-width: 768px) {
+    .footer-sup .footer__menu {
+        display: block;
+    }
+
+    .footer__menu ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+    .footer__menu ul li {
+        text-align: left;
+        padding-right: 2rem;
+    }
+
+    .footer__menu li ul {
+        display: block;
+        padding: 1.6rem;
+        padding-right: 2rem;
+        padding-left: 0;
+    }
+
+    .footer__menu li ul li {
+        padding: .6rem 0;
+    }
+
+    .footer__menu a {
+        color: aliceblue;
+    }
+
+    .footer__logo {
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer-sup {
+        order: 1;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer__logo {
+        order: 2;
+        position: relative;
+    }
+
+    .footer__logo a {
+        position: absolute;
+        top: -15rem;
+        left: 83.5rem;
+    }
+
+    .footer-inf {
+        order: 3;
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .footer-sup {
+        justify-content: space-between;
+    }
+
+    .footer__logo a {
+        left: 128.5rem;
+    }
+}
+
+.hero {
+    min-height: 50rem;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#sobre .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-nosotros.jpg);
+}
+
+.hero h2 {
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.trans {
+    background-color: rgba(255, 255, 255, 0.35);
+    padding-bottom: 1.4rem;
+}
+
+#equipo .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-equipo.jpg);
+}
+
+/* Cards equipo */
+.card {
+    margin-top: 2rem;
+}
+
+.card .image {
+    width: 310px;
+    height: 310px;
+    overflow: hidden;
+}
+
+.card .content {
+    padding-top: 0;
+}
+
+.card p {
+    margin: 1rem 0;
+}
+
+.card .nombre {
+    font-weight: 700;
+}
+
+.card .cargo {
+    font-variant: small-caps;
+}
+
+.citation {
+    font-style: italic;
+}
+
+/* Animación slider cards-equipo y cards-testimonios*/
+.cards-equipo,
+.cards-testimonios {
+    width: 310px;
+    height: auto;
+    margin: 10px auto 0;
+    overflow: hidden;
+}
+
+.cards-equipo ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: slide 30s infinite alternate ease-in-out;
+}
+
+.cards-testimonios ul {
+    display: flex;
+	padding: 0;
+	width: 300%;
+	
+	animation: slide2 36s infinite alternate ease-in-out;
+}
+
+.cards-equipo li,
+.cards-testimonios li {
+	width: 100%;
+	list-style: none;
+}
+
+.cards-equipo .card,
+.cards-testimonios .card {
+	width: 100%;
+}
+
+@keyframes slide4 {
+	0% {margin-left: 0;}
+	30% {margin-left: 0;}
+	
+	33% {margin-left: -50%;}
+	63% {margin-left: -50%;}
+	
+	66% {margin-left: 0%;}
+	100% {margin-left: 0%;}
+}
+
+@keyframes slide3 {
+	0% {margin-left: 0;}
+	30% {margin-left: 0;}
+	
+	33% {margin-left: -50%;}
+	63% {margin-left: -50%;}
+	
+	66% {margin-left: -100%;}
+	100% {margin-left: -100%;}
+}
+
+@keyframes slide2 {
+	0% {margin-left: 0;}
+	30% {margin-left: 0;}
+	
+	33% {margin-left: -100%;}
+	63% {margin-left: -100%;}
+	
+	66% {margin-left: -200%;}
+	100% {margin-left: -200%;}
+}
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+
+@media screen and (min-width: 1024px) {
+    .cards-equipo,
+    .cards-testimonios {
+        width: 650px;
+    }
+
+    .cards-equipo li,
+    .cards-testimonios li {
+        width: 50%;
+    }
+
+    .cards-equipo .card,
+    .cards-testimonios .card {
+        width: 90%;
+    }
+
+    .cards-equipo ul {
+        width: 200%;
+        animation: slide3 30s infinite alternate ease-in-out;
+    }
+
+    .cards-testimonios ul {
+        width: 150%;        
+        animation: slide4 36s infinite alternate ease-in-out;
+    }
+
+    .card-content {
+        min-height: 30rem;
+    }
+}
+
+/* Fin Animación slider cards-equipo y cards-testimonios */
+
+#nuevo .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-talento.jpg);
+}
+
+.quieres-trabajar ul,
+.card-oferta ul {
+    list-style-type: none;
+}
+
+.quieres-trabajar ul li,
+.card-oferta ul li {
+    padding: 1rem 0;
+}
+
+.quieres-trabajar ul li::before,
+.card-oferta ul li::before {
+    content: "❤ ";
+  }
+
+ /* Formularios */
+.form div {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: .8rem;
+}
+
+.form input,
+.form select,
+.form textarea {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: .5rem;
+}
+/* Fin Formularios */
+
+#diseno .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-diseno.jpg);
+}
+
+#diseno .row,
+#desarrollo .row,
+#optimiza .row,
+#posicionamiento .row,
+#publicidad .row,
+#marketing .row {
+    display: flex;
+    flex-direction: column;
+}
+
+#diseno .column1,
+#optimiza .column1,
+#publicidad .column1 {
+    order: 2;
+}
+
+hr {
+    padding: 0 8rem;
+    color: #aaaaaa;
+}
+
+#desarrollo .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-desarrollo.jpg);
+}
+
+#optimiza .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-optimi.jpg);
+}
+
+#posicionamiento .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-posiciona.jpg);
+}
+
+#publicidad .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-publi.jpg);
+}
+
+#marketing .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-marketing.jpg);
+}
+
+/* Proyectos Portfolio Gallery */
+
+.gallery-item {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 4rem;
+	overflow: hidden;
+	vertical-align: top;
+	border-radius: 5px;
+	box-shadow: 3px 3px 6px #000;
+}
+
+.gallery-item:hover .gallery-item__image {
+	opacity: .6;
+}
+
+.gallery-item:hover .gallery-item__body {
+	bottom: 0;
+}
+
+.gallery-item__media {
+	top: 0;
+	left: 0;
+	width: 100%;
+	line-height: 0;
+}
+
+.gallery-item__image {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	border: none;
+	border-radius: 5px;
+	opacity: 1;
+	transition: opacity .3s;
+}
+
+.gallery-item__body {
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	width: 100%;
+	color: #fff;
+	background: rgba(10, 10, 10, .7) none repeat scroll 0 0;
+	transition: all .5s ease 0s;
+}
+
+.gallery-item__copy,
+.gallery-item__subtitle,
+.gallery-item__title,
+.gallery-item__title-link {
+	margin: .3rem 0;
+}
+
+.gallery-item__title {
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+.gallery-item__title-link {
+	display: block;
+	padding: 10px 20px 10px 10px;
+	font-size: 2.4rem;
+	color: #fff;
+	text-align: left;
+	text-decoration: none;
+}
+
+.gallery-item__subtitle {
+	padding: 0 10px 5px;
+	font-family: Georgia, Times New Roman, serif;
+	font-size: 1.8rem;
+	text-align: left;
+}
+
+.gallery-item__copy {
+	padding-left: 1rem;
+	font-size: 2rem;
+	text-align: left;
+}
+
+#testimonios h2 {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Proyectos Media Queries */
+@media screen and (min-width: 768px) {
+    .header {
+        grid-area: header;
+    }
+
+    .main {
+        grid-area: main;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+
+    #proyectos .gallery-container {
+        display: grid;
+        grid-template-areas: "hijo1 hijo1 hijo2"
+                             "hijo1 hijo1 hijo3"
+                             "hijo5 hijo6 hijo3"
+                             "hijo5 hijo6 hijo4"
+                             "hijo7 hijo7 hijo7";
+    }
+
+    #proyectos .hijo1 {
+        grid-area: hijo1;
+        background-image: url(https://cyberdietoterapia.com/images/galeria1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #proyectos .hijo2 {
+        grid-area: hijo2;
+        background-image: url(https://cyberdietoterapia.com/images/galeria2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #proyectos .hijo3 {
+        grid-area: hijo3;
+        background-image: url(https://cyberdietoterapia.com/images/galeria3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #proyectos .hijo4 {
+        grid-area: hijo4;
+        background-image: url(https://cyberdietoterapia.com/images/galeria4.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #proyectos .hijo5 {
+        grid-area: hijo5;
+        background-image: url(https://cyberdietoterapia.com/images/galeria5.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #proyectos .hijo6 {
+        grid-area: hijo6;
+        background-image: url(https://cyberdietoterapia.com/images/galeria6.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #proyectos .hijo7 {
+        grid-area: hijo7;
+        background-image: url(https://cyberdietoterapia.com/images/galeria7.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .gallery-item {
+        margin: 0;
+    }
+
+    .gallery-item .gallery-item__image {
+        visibility: hidden;
+    }
+
+    .gallery-item__media {
+        height: 100%;
+    }
+
+    .gallery-item__media a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Planes */
+#planes .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-planes.jpg);
+}
+
+.card-planes {
+    max-width: 385px;
+    margin: 0 auto 4.6rem;
+}
+
+.card-planes .content {
+    border: 2px solid #aaaaaa;
+    border-radius: 10px;
+    background-color: rgb(163, 194, 224);
+    max-width: 385px;
+}
+
+.card-planes .precio {
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-style: oblique;
+}
+
+.incluye ul,
+.incluyen ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.incluyen ul {
+    margin: 0;
+}
+
+.incluye li,
+.incluyen li {
+    padding: 1rem 0;
+}
+
+.incluye li:before,
+.incluyen li:before {
+    content: "✔";
+    margin-right: 1rem;
+    color: rgb(56, 207, 56);
+}
+
+.cards-proceso {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-proceso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    margin: 0 auto;
+    height: 24rem;
+}
+
+.card-proceso .iconos,
+.card-proceso .iconos2,
+.card-proceso .iconos3,
+.card-proceso .iconos4 {
+    position: relative;
+}
+
+.card-proceso .iconos i:first-child {
+    font-size: 12rem;
+    position: absolute;
+    top: -30px;
+    left: -25px;
+
+}
+
+.card-proceso .iconos2 i:first-child {
+    font-size: 12rem;
+    position: absolute;
+    top: -30px;
+    left: -35px;
+
+}
+
+.card-proceso .iconos3 i:first-child {
+    font-size: 12rem;
+    position: absolute;
+    top: -30px;
+    left: -23px;
+
+}
+
+.card-proceso .iconos4 i:first-child {
+    font-size: 12rem;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+
+}
+
+.card-proceso .iconos i:last-child,
+.card-proceso .iconos2 i:last-child,
+.card-proceso .iconos3 i:last-child,
+.card-proceso .iconos4 i:last-child {
+    font-size: 6rem;
+}
+
+.card-proceso .contenido {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Planes Media Queries */
+@media screen and (min-width: 1024px) {
+    .cards-planes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-planes {
+        min-width: 36rem;
+    }
+
+    .incluye ul {
+        min-height: 34.4rem;
+    }
+
+    .incluyen h3,
+    .proceso h3 {
+        text-align: center;
+    }
+
+    .incluyen .incluido {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .cards-proceso {
+        flex-direction: row;
+        margin-top: 10rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .cards-planes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* Contacto */
+#contacto .hero {
+    background-image: url(https://cyberdietoterapia.com/images/background-contacto.jpg);
+}
+
+textarea {
+    height: 20rem;
+}
+
+.required {
+    color: rgb(255, 0, 0);
+}
+
+
+/* Agencia  + formulario agencia y Contacto */
+@media screen and (min-width: 425px) {
+    .fila input[type="submit"] {
+        display: block;
+        width: 38.5rem;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #sobre .content {
+        width: 768px;
+        margin: 0 auto;
+    }
+
+    .cards-ofertas {
+        display: flex;
+        justify-content: space-evenly;
+        column-gap: 2rem;
+    }
+
+    .card-oferta {
+        min-width: 34.4rem;
+        width: 49%;
+        max-width: 48.2rem;
+        border: 2px solid rgb(0, 0, 0);
+        padding: 1rem;
+    }
+
+    .nom-tel,
+    .mail-vacan,
+    .nom-ape,
+    .mail-tel {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .nom-tel div,
+    .mail-vacan div,
+    .nom-ape div,
+    .mail-tel div {
+        min-width: 34.4rem;
+        width: 49%;
+        max-width: 48.2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #sobre .content {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nuestra-historia {
+        display: flex;
+    }
+
+    .history {
+        padding-right: 2rem;
+    }
+
+    .cronology {
+        min-width: 768px;
+    }
+
+    .cards-compromisos {
+        display: flex;
+        column-gap: 4rem;
+    }
+
+    #nuevo .row1 {
+        display: flex;
+        padding-right: 0;
+    }
+
+    .quieres-trabajar {
+        padding-right: 20%;
+    }
+
+    #nuevo .image {
+        background-image: url(https://cyberdietoterapia.com/images/img03.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #nuevo .image img {
+        visibility: hidden;
+    }
+
+    .row2 h3,
+    .row3 h3,
+    #contacto h3 {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .row3 .form,
+    #contacto .form {
+        display: grid;
+    }
+
+    .fila {
+        padding: 0 calc((100vw - 1004px) / 3);
+    }
+
+    #contacto .form p,
+    #contacto .form ~ p {
+        padding-left: calc((100vw - 1004px) / 3);
+        margin: 2rem 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #sobre .content {
+        width: 1440px;
+        margin: 0 auto;
+    }
+
+    .history {
+        padding-right: 5rem;
+    }
+
+    .cronology {
+        min-width: 768px;
+    }
+
+    .cards-compromisos {
+        column-gap: 8rem;
+    }
+
+    .quieres-trabajar {
+        padding-right: 30%;
+        flex-shrink: 1.5;
+    }
+
+    .row1 .image {
+        flex-grow: 2;
+    }
+
+    .cards-ofertas {
+        width: 140rem;
+        margin: 0 auto;
+    }
+
+    .row3 .form,
+    #contacto .form {
+        max-width: 140rem;
+        margin: 0 auto;
+    }
+
+    .fila {
+        padding: 0 14.5rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #sobre .content {
+        width: 100%;
+        margin: 5rem 0;
+    }
+
+    .history {
+        padding-right: 31rem;
+        border-right: 2px solid rgb(12, 58, 104);
+        margin-right: 29rem;
+    }
+
+    .cronology {
+        min-width: 1024px;
+    }
+
+    .cards-compromisos {
+        column-gap: 12rem;
+    }
+
+    .quieres-trabajar {
+        padding-right: 25%;
+        border-right: 2px solid rgb(12, 58, 104);
+        margin-right: 20%;
+    }
+}
+
+
+/* Servicios */
+@media screen and (min-width: 1024px) {
+    #diseno .row,
+    #desarrollo .row,
+    #optimiza .row,
+    #posicionamiento .row,
+    #publicidad .row,
+    #marketing .row {
+        flex-direction: row;
+    }
+
+    #diseno .column1,
+    #optimiza .column1,
+    #publicidad .column1 {
+        order: 0;
+    }
+
+    .column1,
+    .column2,
+    .column3 {
+        flex-grow: 1;
+        flex-basis: 33.3%;
+    }
+
+    .row hr {
+        display: none;
+    }
+
+    #diseno .column1 {
+        background-image: url(https://cyberdietoterapia.com/images/img04.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #desarrollo .column3 {
+        background-image: url(https://cyberdietoterapia.com/images/img05.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #optimiza .column1 {
+        background-image: url(https://cyberdietoterapia.com/images/img06.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #posicionamiento .column3 {
+        background-image: url(https://cyberdietoterapia.com/images/img07.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #publicidad .column1 {
+        background-image: url(https://cyberdietoterapia.com/images/img08.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #marketing .column3 {
+        background-image: url(https://cyberdietoterapia.com/images/img09.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #servicios .main .image img {
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #diseno .column2,
+    #diseno .column3,
+    #desarrollo .column1,
+    #desarrollo .column2,
+    #optimiza .column2,
+    #posicionamiento .column1,
+    #posicionamiento .column2,
+    #publicidad .column2,
+    #publicidad .column3,
+    #marketing .column1,
+    #marketing .column2 {
+        padding: 5rem;
+    }
+
+    #servicios .main h3,
+    #servicios .main p {
+        margin: 5rem 0;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #diseno .column2,
+    #diseno .column3,
+    #desarrollo .column1,
+    #desarrollo .column2,
+    #optimiza .column2,
+    #posicionamiento .column1,
+    #posicionamiento .column2,
+    #publicidad .column2,
+    #publicidad .column3,
+    #marketing .column1,
+    #marketing .column2 {
+        padding: 10rem;
+    }
+
+    #servicios .main h3,
+    #servicios .main p {
+        margin: 10rem 0;
+    }
+}
