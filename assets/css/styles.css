@@ -848,8 +848,10 @@ p, .acordeon__item i:before, .acordeon__item i:after {
 
 @media screen and (min-width: 768px) {
     #sobre .trans,
-    #diseno .trans {
+    #diseno .trans,
+    .contactanos .trans {
         background-color: rgba(0, 0, 0, 0.35);
+        margin-bottom: 2rem;
     }
 }
 
