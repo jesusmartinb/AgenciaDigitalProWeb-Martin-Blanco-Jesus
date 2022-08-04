@@ -22,3 +22,12 @@ function main () {
 		$(this).children('.children').slideToggle();
 	});
 }
+
+$(window).on("scroll", function () {
+	if ($(window).scrollTop() > $("#cambio").offset().top - 50) {
+	  $(".black").addClass("white").removeClass("black");
+
+	} else {
+	  $(".white").addClass("black").removeClass("white");
+	};
+  });
