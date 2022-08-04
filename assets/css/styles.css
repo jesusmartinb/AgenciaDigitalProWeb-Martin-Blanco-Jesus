@@ -1767,3 +1767,10 @@ textarea {
         transition: all .5s ease-in-out;
     }
 }
+
+/* Animaciones con la librería Animate.css V4 */
+@media screen and (min-width: 1920px) {
+    .hidden {
+        visibility: hidden;
+    }
+}
