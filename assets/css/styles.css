@@ -1774,3 +1774,25 @@ textarea {
         visibility: hidden;
     }
 }
+
+/* Animación de degradado */
+.planes,
+#contacto .row {
+    background: linear-gradient(45deg, #008181, #b9b600, #ffaf00);
+    animation: AnimacionDegradado 10s ease-in-out infinite;
+    background-size: 600% 600%;
+}
+
+@keyframes AnimacionDegradado {
+	0% {
+		background-position: 0 50%
+	}
+
+	50% {
+		background-position: 100% 50%
+	}
+
+	to {
+		background-position: 0 50%
+	}
+}
